@@ -32,7 +32,7 @@ def recommender (input_movie, movie_number = k):
 		return list_recommande, "Erreur, le nombre de recommandation doit etre entre 1 et 50]"
 	
 	#lecture du fichier, obtention d'un DataFrame Pandas.
-	movie = pd.read_csv('movie_metadata_Num_NaN_Filled_Genres_Converted_avec_clusters_(7, canberra, MHA(hclust)).csv', sep=";", encoding='utf_8', decimal = ',', low_memory=False)
+	movie = pd.read_csv('movie_metadata_Num_NaN_Filled_Genres_Converted_avec_clusters_7_canberra_MHA_hclust.csv', sep=";", encoding='utf_8', decimal = ',', low_memory=False)
 	
 	#Je choisi d'utiliser une colonne avec mon_index, 
 	#une indexation persistante à travers la création de susbset (sous data frame via df.loc)
