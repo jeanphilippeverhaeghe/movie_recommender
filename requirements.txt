@@ -6,6 +6,7 @@ Flask-Bootstrap==3.3.7.1
 flask-nav==0.6
 Flask-RESTful==0.3.6
 Flask-Script==2.0.6
+gunicorn==19.7.1
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
