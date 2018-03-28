@@ -1,0 +1,10 @@
+Flask
+Flask-restful
+Flask-bootstrap
+Flask-Nav
+Flask-script
+numpy
+pandas
+sklearn
+scipy
+gunicorn
