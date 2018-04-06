@@ -29,7 +29,7 @@ def recommender (input_movie, movie_number = k):
 	list_recommande = []
 	
 	if movie_number < 1 or movie_number > 50 :
-		return list_recommande, "Erreur, le nombre de recommandation doit etre entre 1 et 50]"
+		return list_recommande, "ERROR, le nombre de recommandation doit etre entre 1 et 50]"
 	
 	#lecture du fichier, obtention d'un DataFrame Pandas.
 	movie = pd.read_csv('movie_metadata_Num_NaN_Filled_Genres_Converted_avec_clusters_7_canberra_MHA_hclust.csv', sep=";", encoding='utf_8', decimal = ',', low_memory=False)
@@ -52,9 +52,9 @@ def recommender (input_movie, movie_number = k):
 	#recherche du cluster ou se trouve input_movie
 	le_cluster=0
 	if subset_film.shape[0] == 0 :
-		status = "Le film " + input_movie + " est inconnu dans la base de données. Process stoppé"
+		status = "ERROR, Le film " + input_movie + " est inconnu dans la base de données. Process stoppé"
 	elif subset_film.shape[0] > 1 :
-		status = "Le film " + input_movie + " est présent " + str(subset_film.shape[0]) + " fois dans la base de données. Process stoppé"
+		status = "ERROR, Le film " + input_movie + " est présent " + str(subset_film.shape[0]) + " fois dans la base de données. Process stoppé"
 	else:
 		status = "OK, Le film " + input_movie + " est dans le cluster: " + str(subset_film['cluster'].iloc[0])
 		le_cluster = subset_film['cluster'].iloc[0]

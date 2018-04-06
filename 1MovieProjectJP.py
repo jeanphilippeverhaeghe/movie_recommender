@@ -17,7 +17,7 @@ def return_movie(lefilm):
     if "ERROR" in letat:
         return jsonify({'status' : str(letat) })
     else:
-        return jsonify({'films recoMmandes' : str(la_recommendation) })
+        return jsonify({'films recommandes' : str(la_recommendation) })
         
 if __name__ == "__main__":
 #lance le serveur Flask
