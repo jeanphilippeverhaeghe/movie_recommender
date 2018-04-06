@@ -8,7 +8,7 @@ app = Flask(__name__)
 #et la lie à la fonction hello
 @app.route("/")
 def hello():
-    return "Hello World (JPV1)!"
+    return "Bienvenue sur le site de recommandation de films de JP V"
 
 @app.route('/recommend/<string:lefilm>', methods = ['GET'])
 def return_movie(lefilm):

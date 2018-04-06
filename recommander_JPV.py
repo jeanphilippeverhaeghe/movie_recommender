@@ -52,9 +52,9 @@ def recommender (input_movie, movie_number = k):
 	#recherche du cluster ou se trouve input_movie
 	le_cluster=0
 	if subset_film.shape[0] == 0 :
-		status = "ERROR, Le film " + input_movie + " est inconnu dans la base de données. Process stoppé"
+		status = "ERROR, Le film " + input_movie + " est inconnu dans la base de donnees. Process stoppe"
 	elif subset_film.shape[0] > 1 :
-		status = "ERROR, Le film " + input_movie + " est présent " + str(subset_film.shape[0]) + " fois dans la base de données. Process stoppé"
+		status = "ERROR, Le film " + input_movie + " est present " + str(subset_film.shape[0]) + " fois dans la base de données. Process stoppe"
 	else:
 		status = "OK, Le film " + input_movie + " est dans le cluster: " + str(subset_film['cluster'].iloc[0])
 		le_cluster = subset_film['cluster'].iloc[0]
