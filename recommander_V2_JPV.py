@@ -86,6 +86,7 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 		Liste_Index = movie.loc[movie.imdb_id == mon_film].index.values
 		if len(Liste_Index) != 1 :
 			print("Code Imdb Inconnu")
+			resultatD = "Code Imdb Inconnu" 
 			query_index = -1
 		else :
 			query_index = Liste_Index[0]
@@ -97,6 +98,7 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 		Liste_Index = movie.loc[movie.titre_film == mon_film.lower().strip()].index.values
 		if len(Liste_Index) != 1 :
 			print("Nom de film Inconnu")
+			resultatD = "Nom de film Inconnu"
 			query_index = -1
 		else :
 			query_index = Liste_Index[0]
@@ -106,6 +108,7 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 			query_index = index
 		else:
 			print(f"Le code Index doit être compris entre 0 et {movie.shape[0]} vous avez fourni {mon_film}")
+			resultatD = "Le Code Index n'est pas correct)"
 			query_index = -1
 
 			
