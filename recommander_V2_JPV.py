@@ -69,9 +69,10 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 	imdb = False
 	index = False
 	chaine = False
-	if isinstance(mon_film, str):
+	if not mon_film.isdigit():
 		chaine = True
 	else:
+		mon_film=int(mon_film)
 		if mon_film > movie.shape[0] :
 			imdb=True
 		else:
