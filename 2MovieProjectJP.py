@@ -11,8 +11,8 @@ def hello():
     return "Bienvenue sur le site de recommandation de films de JP V\n\nPour lancer une recommandation sans cluster taper nocluster/<film>\nPour lancer une recommandation avec cluster taper cluster/<film>\n\A noter que le <film> peut etre une chaine, un code IMDB ou un index de dataframe pandas"
 
 @app.route('/nocluster/<string:lefilm>', methods = ['GET'])
-def return_movie(lefilm):
-    la_recommendation, letat = recommander__V2_JPV.recommender(input_movie = lefilm, with_cluster = False, movie_number = 5)
+def return_movie_nocluster(lefilm):
+    la_recommendation, letat = recommander_V2_JPV.recommender(input_movie = lefilm, with_cluster = False, movie_number = 5)
     print( letat)
     if "ERROR" in letat:
         return jsonify({'status' : str(letat) })
@@ -20,8 +20,8 @@ def return_movie(lefilm):
         return jsonify({'films recommandes' : str(la_recommendation) })
 
 @app.route('/cluster/<string:lefilm>', methods = ['GET'])
-def return_movie(lefilm):
-    la_recommendation, letat = recommander__V2_JPV.recommender(input_movie = lefilm, with_cluster = True, movie_number = 5)
+def return_movie_cluster(lefilm):
+    la_recommendation, letat = recommander_V2_JPV.recommender(input_movie = lefilm, with_cluster = True, movie_number = 5)
     print( letat)
     if "ERROR" in letat:
         return jsonify({'status' : str(letat) })
