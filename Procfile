@@ -1,1 +1,1 @@
-web: gunicorn 1MovieProjectJP:app
+web: gunicorn 2MovieProjectJP:app
