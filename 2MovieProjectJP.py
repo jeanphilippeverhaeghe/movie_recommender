@@ -8,7 +8,7 @@ app = Flask(__name__)
 #et la lie à la fonction hello
 @app.route("/")
 def hello():
-    return "Bienvenue sur le site de recommandation de films de JP V\n\nPour lancer une recommandation sans cluster taper nocluster/<film>\nPour lancer une recommandation avec cluster taper cluster/<film>\n\A noter que le <film> peut etre une chaine, un code IMDB ou un index de dataframe pandas"
+    return "Bienvenue sur le site de recommandation de films de JP V          Pour lancer une recommandation SANS cluster taper nocluster/lefilm          Pour lancer une recommandation AVEC cluster taper cluster/lefilm          A noter que lefilm> peut etre une chaine, un code IMDB ou un index de dataframe pandas"
 
 @app.route('/nocluster/<string:lefilm>', methods = ['GET'])
 def return_movie_nocluster(lefilm):
