@@ -77,7 +77,7 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 			imdb=True
 		else:
 			index = True
-		imdb = True
+		imdb = True # je ne veux pas de code index (possibilité de confusion (ex: 2012 => c'est  le film ou l'index ?)
 	print(f"imdb: {imdb}, index: {index}, chaine: {chaine}")
 	
 	#########################
