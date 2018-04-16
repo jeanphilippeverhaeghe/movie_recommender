@@ -77,7 +77,8 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 			imdb=True
 		else:
 			index = True
-		imdb = True # je ne veux pas de code index (possibilité de confusion (ex: 2012 => c'est  le film ou l'index ?)
+		imdb = True 
+		index = False # je ne veux pas de code index (possibilité de confusion (ex: 2012 => c'est  le film ou l'index ?)
 	print(f"imdb: {imdb}, index: {index}, chaine: {chaine}")
 	
 	#########################
@@ -91,6 +92,7 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 			query_index = -1
 		else :
 			query_index = Liste_Index[0]
+			mon_titre_input= movie.movie_title.iloc[query_index].strip()
 
 	if chaine:
 		#Création d'une nouvelle colonne avec titres en minuscules et le caractère parasite dégagé !
@@ -103,6 +105,7 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 			query_index = -1
 		else :
 			query_index = Liste_Index[0]
+			mon_titre_input= movie.movie_title.iloc[query_index].strip()
 
 	if index:
 		if mon_film <= movie.shape[0] and mon_film>=0:
@@ -148,6 +151,7 @@ def recommender (input_movie, with_cluster=True, movie_number = k):
 		resultatI = []
 		resultatN = []
 		resultatD = []
+		resultatD.append( {"Film propose en entree: " + mon_titre_input + " recommandations: " : 5 } )
 		for i in range(0, len(distances.flatten())):
 			if i == 0:
 				print (f"Recommandations pour {sous_df['movie_title'].loc[query_index]} (index = {query_index}):\n")
